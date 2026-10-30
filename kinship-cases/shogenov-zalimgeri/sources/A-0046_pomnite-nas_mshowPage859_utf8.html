@@ -1,0 +1,595 @@
+<br />
+<b>Deprecated</b>:  Function split() is deprecated in <b>/home/lot-bilet/pomnite-nas.ru/docs/mshow.php</b> on line <b>69</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /home/lot-bilet/pomnite-nas.ru/docs/mshow.php:69) in <b>/home/lot-bilet/pomnite-nas.ru/docs/mshow.php</b> on line <b>912</b><br />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Информация о памятнике</title>
+<link href="Styles/RKKA/Style.css" type="text/css" rel="stylesheet">
+<link href="Styles/RKKA/Style_Components.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" language="JavaScript1.2" src="menu/stmenu.js"></script>
+<script type="text/javascript" language="JavaScript1.2">
+<!--
+stm_bm(["menu5892",730,"menu/","blank.gif",0,"","",1,0,250,0,1500,1,0,0,"","",0,0,1,2,"default","hand","menu/"],this);
+stm_bp("p0",[0,4,0,0,1,3,0,7,100,"",-2,"",-2,40,2,3,"#999999","#000000","",0,0,0,"#000000"]);
+stm_ai("p0i0",[0,"НАЧАЛО","","",-1,-1,0,"index.php","_self","","","","",0,0,0,"","",0,0,0,1,1,"#BDD888",0,"#000000",0,"","",3,3,1,1,"#AECC74","#AECC74","#000000","#FFFFFF","10pt 'Arial','Verdana'","10pt 'Arial','Verdana'",0,0]);
+stm_aix("p0i1","p0i0",[0,"НАША ГЕОГРАФИЯ","","",-1,-1,0,"mlist1.php","_self","","","","",0,0,0,"","",0,0,0,0]);
+stm_aix("p0i2","p0i1",[0,"ВСЕ ПАМЯТНИКИ","","",-1,-1,0,"mshow.php"]);
+
+stm_aix("p0i3","p0i1",[0,"ГАЛЕРЕИ","","",-1,-1,0,"","_self","","","","",0,0,0,"arrow_r.gif","arrow_r.gif",7,7]);
+stm_bpx("p1","p0",[1,4,0,0,1,3,0,0]);
+
+stm_aix("p1i0","p0i1",[0,"Бюсты","","",-1,-1,0,"gallery.php?GalleryID=3"]);
+
+stm_aix("p1i0","p0i1",[0,"Застывший металл","","",-1,-1,0,"gallery.php?GalleryID=1"]);
+
+stm_aix("p1i0","p0i1",[0,"Мемориальные доски","","",-1,-1,0,"gallery.php?GalleryID=2"]);
+
+stm_ep();
+
+stm_aix("p0i4","p0i1",[0,"КТО МЫ?","","",-1,-1,0,"authors.php"]);
+stm_aix("p0i5","p0i1",[0,"ПОИСК","","",-1,-1,0,"search.php"]);
+stm_aix("p0i6","p0i1",[0,"ЧТО И КАК ПРИСЫЛАТЬ","","",-1,-1,0,"tech.htm"]);
+stm_ep();
+stm_sc(1,["transparent","transparent","","",3,3,0,0,"#FFFFF7","#000000","up_disabled.gif","up_enabled.gif",7,9,0,"down_disabled.gif","down_enabled.gif",7,9,0,1,200]);
+stm_em();
+//-->
+</script>
+ 
+<p></p>
+
+<form name="search_easy" action="mshow.php?f_ISO=UA&mshowPage=859&ccsForm=search_easy" method="post">
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td valign="top">
+        <table class="Header" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="HeaderLeft"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td> 
+            <th>Поиск памятника&nbsp;</th>
+ 
+            <td class="HeaderRight"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+          </tr>
+        </table>
+ 
+        <table class="Record" cellspacing="0" cellpadding="0">
+          
+          <tr class="Controls">
+            <th>Ключевое слово&nbsp;</th>
+ 
+            <td><input value="" name="s_int"></td>
+          </tr>
+ 
+          <tr class="Error">
+            <td colspan="2"><a href="search.php">Расширенный поиск</a>&nbsp;</td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td align="right" colspan="2">
+              <input type="image" src="Styles/RKKA/Images/ru/ButtonSearch.gif" value="Искать" border="0" name="Button_DoSearch"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<p>&nbsp;</p>
+
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top">
+      <table class="HeaderRKKA" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td class="HeaderLeftRKKA"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td> 
+          <th>Описание памятника&nbsp;</th>
+ 
+          <td class="HeaderRightRKKA"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+        </tr>
+      </table>
+ 
+      <table class="GridRKKA" cellspacing="0" cellpadding="0">
+        <tr class="FooterRKKA">
+          <td colspan="6">
+            <p align="left">Выбрано памятников:&nbsp;
+            6610 </p>
+          </td>
+        </tr>
+ 
+        
+        <tr class="RowRKKA">
+          
+          <th>Населенный пункт</th>
+ 
+          
+          <td><strong><input type="hidden" name="BadRegion" value="0"><input type="hidden" name="BadProvince" value="0"><a href="mshow.php?s_OID=8166">с.  Боровая (Борова), Змиевский
+            район,  Харьковская область, Украина</a></strong></td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Улица, дом</th>
+ 
+          
+          <td>Мира&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Тип объекта</th>
+ 
+          
+          <td>братская могила&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Название памятника</th>
+ 
+          
+          <td>Братская могила воинов, погибших в боях за село&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Состояние памятника</th>
+ 
+          
+          <td>хорошее&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Дата регистрации в базе данных</th>
+ 
+          
+          <td>05/10/2011&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          <th>Фотографии&nbsp;<input type="hidden" value="222" name="KID"><br>
+          </th>
+ 
+          <td colspan="5">
+            <table class="GridRKKA" cellspacing="0" cellpadding="0">
+              <TR><TD ALIGN="CENTER"><A HREF="img/222/201110050231060.DSCN4417.JPG"><IMG BORDER=0 SRC=img/222/T_201110050231060.DSCN4417.JPG></A><BR>Общий вид<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;124Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050231260.DSCN4418.JPG"><IMG BORDER=0 SRC=img/222/T_201110050231260.DSCN4418.JPG></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;80Кб</I></TD> 
+            </table>
+          </td>
+        </tr>
+ 
+        <tr class="FooterRKKA" name="Row" isbegin="False" ccstype="Block">
+          <td colspan="6">&nbsp;</td>
+        </tr>
+ 
+        <tr class="SeparatorRKKA">
+          <td colspan="6"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+        </tr>
+        
+        <tr class="RowRKKA">
+          
+          <th>Населенный пункт</th>
+ 
+          
+          <td><strong><input type="hidden" name="BadRegion" value="0"><input type="hidden" name="BadProvince" value="0"><a href="mshow.php?s_OID=8167">с.  Боровая (Борова), Змиевский
+            район,  Харьковская область, Украина</a></strong></td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Тип объекта</th>
+ 
+          
+          <td>братская могила&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Название памятника</th>
+ 
+          
+          <td>Братская могила воинов, погибших в боях за село и памятный знак погибшим односельчанам&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Состояние памятника</th>
+ 
+          
+          <td>хорошее&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Дата регистрации в базе данных</th>
+ 
+          
+          <td>05/10/2011&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          <th>Фотографии&nbsp;<input type="hidden" value="222" name="KID"><br>
+          </th>
+ 
+          <td colspan="5">
+            <table class="GridRKKA" cellspacing="0" cellpadding="0">
+              <TR><TD ALIGN="CENTER"><A HREF="img/222/201110050236200.DSCN4416.JPG"><IMG BORDER=0 SRC=img/222/T_201110050236200.DSCN4416.JPG></A><BR>Памятник<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;167Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050236500.DSCN4405.JPG"><IMG BORDER=0 SRC=img/222/T_201110050236500.DSCN4405.JPG></A><BR>Мемориальная плита похороненным воинам<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;117Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050237140.001.jpg"><IMG BORDER=0 SRC=img/222/T_201110050237140.001.jpg></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;94Кб</I></TD></TR><TR><TD ALIGN="CENTER"><A HREF="img/222/201110050237230.002.jpg"><IMG BORDER=0 SRC=img/222/T_201110050237230.002.jpg></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;111Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050237340.003.jpg"><IMG BORDER=0 SRC=img/222/T_201110050237340.003.jpg></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;105Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050238170.DSCN4404.JPG"><IMG BORDER=0 SRC=img/222/T_201110050238170.DSCN4404.JPG></A><BR>Могила майора Сергиенко Я.Е.<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;91Кб</I></TD></TR><TR><TD ALIGN="CENTER"><A HREF="img/222/201110050238440.DSCN4412.JPG"><IMG BORDER=0 SRC=img/222/T_201110050238440.DSCN4412.JPG></A><BR>Мемориальная плита погибшим односельчанам<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;66Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110050242050.004.jpg"><IMG BORDER=0 SRC=img/222/T_201110050242050.004.jpg></A><BR>Имена погибших односельчан<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;142Кб</I></TD> 
+            </table>
+          </td>
+        </tr>
+ 
+        <tr class="FooterRKKA" name="Row" isbegin="False" ccstype="Block">
+          <td colspan="6">&nbsp;</td>
+        </tr>
+ 
+        <tr class="SeparatorRKKA">
+          <td colspan="6"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+        </tr>
+        
+        <tr class="RowRKKA">
+          
+          <th>Населенный пункт</th>
+ 
+          
+          <td><strong><input type="hidden" name="BadRegion" value="0"><input type="hidden" name="BadProvince" value="0"><a href="mshow.php?s_OID=11323">с.  Великая Гомольша (Велика Гомільша), Змиевский
+            район,  Харьковская область, Украина</a></strong></td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Тип объекта</th>
+ 
+          
+          <td>братская могила&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Название памятника</th>
+ 
+          
+          <td>Братская могила войнов и памятный знак погибшим землякам&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Состояние памятника</th>
+ 
+          
+          <td>хорошее&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Дата регистрации в базе данных</th>
+ 
+          
+          <td>21/04/2013&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          <th>Фотографии&nbsp;<input type="hidden" value="222" name="KID"><br>
+          </th>
+ 
+          <td colspan="5">
+            <table class="GridRKKA" cellspacing="0" cellpadding="0">
+              <TR><TD ALIGN="CENTER"><A HREF="img/222/201304210141010.DSCN0467.JPG"><IMG BORDER=0 SRC=img/222/T_201304210141010.DSCN0467.JPG></A><BR>Общий вид<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;244Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210141250.DSCN0468.JPG"><IMG BORDER=0 SRC=img/222/T_201304210141250.DSCN0468.JPG></A><BR>Памятник<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;153Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210142140.DSCN0469.JPG"><IMG BORDER=0 SRC=img/222/T_201304210142140.DSCN0469.JPG></A><BR>Стела с именами погибших земляков и похороненных войнов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;237Кб</I></TD></TR><TR><TD ALIGN="CENTER"><A HREF="img/222/201304210143250.gam1.jpg"><IMG BORDER=0 SRC=img/222/T_201304210143250.gam1.jpg></A><BR>Имена погибших земляков<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;178Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210145000.gam2.jpg"><IMG BORDER=0 SRC=img/222/T_201304210145000.gam2.jpg></A><BR>Имена похороненных войнов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;173Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210145210.gam3.jpg"><IMG BORDER=0 SRC=img/222/T_201304210145210.gam3.jpg></A><BR>Имена похороненных войнов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;172Кб</I></TD></TR><TR><TD ALIGN="CENTER"><A HREF="img/222/201304210145440.gam4.jpg"><IMG BORDER=0 SRC=img/222/T_201304210145440.gam4.jpg></A><BR>Имена похороненных войнов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;173Кб</I></TD> 
+            </table>
+          </td>
+        </tr>
+ 
+        <tr class="FooterRKKA" name="Row" isbegin="False" ccstype="Block">
+          <td colspan="6">&nbsp;</td>
+        </tr>
+ 
+        <tr class="SeparatorRKKA">
+          <td colspan="6"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+        </tr>
+        
+        <tr class="RowRKKA">
+          
+          <th>Населенный пункт</th>
+ 
+          
+          <td><strong><input type="hidden" name="BadRegion" value="0"><input type="hidden" name="BadProvince" value="0"><a href="mshow.php?s_OID=11327">с.  Виловка (Вилівка), Змиевский
+            район,  Харьковская область, Украина</a></strong></td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Тип объекта</th>
+ 
+          
+          <td>братская могила&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Название памятника</th>
+ 
+          
+          <td>Братская могила войнов&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Состояние памятника</th>
+ 
+          
+          <td>хорошее&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Дата регистрации в базе данных</th>
+ 
+          
+          <td>21/04/2013&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          <th>Фотографии&nbsp;<input type="hidden" value="222" name="KID"><br>
+          </th>
+ 
+          <td colspan="5">
+            <table class="GridRKKA" cellspacing="0" cellpadding="0">
+              <TR><TD ALIGN="CENTER"><A HREF="img/222/201304210810290.DSCN0547.JPG"><IMG BORDER=0 SRC=img/222/T_201304210810290.DSCN0547.JPG></A><BR>Общий вид<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;227Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210810500.DSCN0548.JPG"><IMG BORDER=0 SRC=img/222/T_201304210810500.DSCN0548.JPG></A><BR>Памятник<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;184Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201304210811200.DSCN0549.JPG"><IMG BORDER=0 SRC=img/222/T_201304210811200.DSCN0549.JPG></A><BR>Имена похороненных войнов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;325Кб</I></TD></TR> 
+            </table>
+          </td>
+        </tr>
+ 
+        <tr class="FooterRKKA" name="Row" isbegin="False" ccstype="Block">
+          <td colspan="6">&nbsp;</td>
+        </tr>
+ 
+        <tr class="SeparatorRKKA">
+          <td colspan="6"><img src="Styles/RKKA/Images/Spacer.gif" border="0"></td>
+        </tr>
+        
+        <tr class="RowRKKA">
+          
+          <th>Населенный пункт</th>
+ 
+          
+          <td><strong><input type="hidden" name="BadRegion" value="0"><input type="hidden" name="BadProvince" value="0"><a href="mshow.php?s_OID=8144">с.  Гайдары (Гайдари), Змиевский
+            район,  Харьковская область, Украина</a></strong></td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Тип объекта</th>
+ 
+          
+          <td>братская могила&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Название памятника</th>
+ 
+          
+          <td>Братская могила воинов, погибших при освобождении села&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Состояние памятника</th>
+ 
+          
+          <td>хорошее&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          
+        </tr>
+ 
+        <tr class="RowRKKA">
+          
+          <th>Дата регистрации в базе данных</th>
+ 
+          
+          <td>03/10/2011&nbsp;</td> 
+        </tr>
+ 
+        <tr class="RowRKKA">
+          <th>Фотографии&nbsp;<input type="hidden" value="222" name="KID"><br>
+          </th>
+ 
+          <td colspan="5">
+            <table class="GridRKKA" cellspacing="0" cellpadding="0">
+              <TR><TD ALIGN="CENTER"><A HREF="img/222/201110031121140.DSCN4324.JPG"><IMG BORDER=0 SRC=img/222/T_201110031121140.DSCN4324.JPG></A><BR>Общий вид<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;93Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110031121390.DSCN4325.JPG"><IMG BORDER=0 SRC=img/222/T_201110031121390.DSCN4325.JPG></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;92Кб</I></TD><TD ALIGN="CENTER"><A HREF="img/222/201110031122040.001.jpg"><IMG BORDER=0 SRC=img/222/T_201110031122040.001.jpg></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;305Кб</I></TD></TR><TR><TD ALIGN="CENTER"><A HREF="img/222/201110031122200.002.jpg"><IMG BORDER=0 SRC=img/222/T_201110031122200.002.jpg></A><BR>Имена похороненных воинов<BR><I>Фото:&nbsp;Дмитрий Храмов&nbsp;307Кб</I></TD> 
+            </table>
+          </td>
+        </tr>
+ 
+        <tr class="FooterRKKA" name="Row" isbegin="False" ccstype="Block">
+          <td colspan="6">&nbsp;</td>
+        </tr>
+ 
+        
+        
+        <tr class="FooterRKKA">
+          <td colspan="6">
+            
+            <a href="mshow.php?f_ISO=UA&mshowPage=1"><img src="Styles/RKKA/Images/First.gif" border="0"></a> 
+            <a href="mshow.php?f_ISO=UA&mshowPage=858"><img src="Styles/RKKA/Images/Prev.gif" border="0"></a> &nbsp; 
+            <a href="mshow.php?f_ISO=UA&mshowPage=847">847</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=848">848</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=849">849</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=850">850</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=851">851</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=852">852</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=853">853</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=854">854</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=855">855</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=856">856</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=857">857</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=858">858</a>&nbsp;859&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=860">860</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=861">861</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=862">862</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=863">863</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=864">864</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=865">865</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=866">866</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=867">867</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=868">868</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=869">869</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=870">870</a>&nbsp;<a href="mshow.php?f_ISO=UA&mshowPage=871">871</a>&nbsp;из&nbsp;1322&nbsp; 
+            <a href="mshow.php?f_ISO=UA&mshowPage=860"><img src="Styles/RKKA/Images/Next.gif" border="0"></a> 
+            <a href="mshow.php?f_ISO=UA&mshowPage=1322"><img src="Styles/RKKA/Images/Last.gif" border="0"></a> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+&nbsp; 
+</body>
+</html>
