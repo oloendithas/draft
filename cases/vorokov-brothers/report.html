@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Братья Вороковы — Жамболет и Жамырза Исуфовичи</title>
+<style>
+@page { size:A4; margin:16mm 17mm; }
+:root {
+ --paper:#ffffff; --canvas:#eeeae6; --ink:#242323; --muted:#625d5a; --line:#d5cfca;
+ --accent:#812f34; --accent-soft:#f8efed; --soft:#f6f3f0;
+ --ok:#285d39; --ok-bg:#eaf2e9; --maybe:#725011; --maybe-bg:#faf0d9;
+ --no:#842f34; --no-bg:#f8e9e7; --family:#344f70; --family-bg:#eaf0f7;
+ --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","Noto Sans Armenian","Noto Sans Georgian","Noto Sans Hebrew","DejaVu Sans",Arial,sans-serif;
+ --serif:Georgia,"Times New Roman","Noto Serif","Noto Serif Armenian","Noto Serif Georgian","Noto Serif Hebrew","DejaVu Serif","Sylfaen",serif; --tree-gap:40px;
+ color-scheme:light;
+}
+* { box-sizing:border-box; }
+html { scroll-padding-top:24px; }
+body { margin:0; background:var(--canvas); color:var(--ink); font:1.0625rem/1.75 var(--serif); }
+a { color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px; }
+a:hover { text-decoration-thickness:2px; }
+a:focus-visible,summary:focus-visible,.table-wrap:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+.report-shell { max-width:1180px; margin:32px auto; background:var(--paper); border-top:7px solid var(--ink); }
+.report-topline { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; padding:17px 52px; border-bottom:1px solid var(--ink); color:var(--muted); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.12em; }
+.report-header { padding:40px 52px 32px; border-bottom:1px solid var(--ink); }
+.report-intro { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:0 48px; align-items:start; }
+.eyebrow { margin:0 0 10px; grid-column:1; font:600 .75rem/1.5 var(--sans); letter-spacing:.16em; text-transform:none; color:var(--accent); }
+h1 { overflow-wrap:anywhere; grid-column:1; font:400 clamp(3rem,7vw,5.75rem)/1.03 var(--serif); letter-spacing:normal; margin:0 0 16px; text-wrap:balance; }
+.subtitle { grid-column:1; font:1.125rem/1.55 var(--serif); max-width:42ch; color:var(--muted); margin:0 0 24px; }
+.report-meta { grid-column:2; grid-row:2/4; margin:6px 0 0; display:grid; gap:16px; padding-left:24px; border-left:1px solid var(--line); font:.8125rem/1.7 var(--sans); }
+.report-meta dt { font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.06em; color:var(--muted); margin:0 0 3px; }
+.report-meta dd { margin:0; }
+.demo-note { grid-column:1/-1; padding:12px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font:.75rem/1.65 var(--sans); color:var(--muted); }
+.demo-note strong { color:var(--ink); }
+.family-tree { margin:30px auto 0; width:100%; max-width:780px; min-width:0; }
+.tree-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; margin-bottom:16px; }
+.tree-heading h2 { font:400 1.75rem/1.3 var(--serif); color:var(--ink); letter-spacing:-.025em; border:0; padding:0; margin:0; }
+.tree-heading>span { color:var(--muted); font:.75rem/1.5 var(--sans); }
+.tree-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--tree-gap); }
+.person-card { min-width:0; overflow-wrap:anywhere; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; padding:10px 14px 12px; border:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--paper); text-decoration:none; transition:background-color 160ms ease; }
+a.person-card:hover { background:var(--accent-soft); }
+.person-role { grid-column:1/-1; color:var(--muted); font:600 .75rem/1.4 var(--sans); letter-spacing:.07em; text-transform:none; }
+.person-name { grid-column:1/-1; color:var(--ink); font:400 1.375rem/1.3 var(--serif); letter-spacing:normal; overflow-wrap:anywhere; }
+.person-years { color:var(--muted); font:.75rem/1.6 var(--sans); font-variant-numeric:tabular-nums; }
+.person-status { color:var(--accent); font:600 .75rem/1.6 var(--sans); }
+.person-card.subject { background:var(--accent-soft); border-top:3px solid var(--accent); border-bottom:1px solid var(--accent); padding-top:8px; }
+.person-card.subject .person-role { color:var(--accent); }
+.person-card.subject .person-status { grid-column:1/-1; font-weight:400; color:var(--muted); }
+.spouse-group { position:relative; }
+.spouse-group::before { content:""; position:absolute; top:50%; left:calc(50% - var(--tree-gap)/2); width:var(--tree-gap); height:4px; border-top:1px solid var(--accent); border-bottom:1px solid var(--accent); }
+.tree-connectors { position:relative; width:100%; height:24px; color:var(--accent); }
+.tree-connectors::before { content:""; position:absolute; top:0; bottom:0; left:calc(25% - var(--tree-gap)/4); border-left:1px solid currentColor; }
+.mother-branch { position:absolute; top:0; left:calc(25% - var(--tree-gap)/4); width:calc(50% + var(--tree-gap)/2); height:10px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; }
+.child-row .person-card { grid-column:1; }
+.tree-caption { font:.75rem/1.65 var(--sans); color:var(--muted); margin-top:14px; }
+.tree-caption span { display:block; margin-top:4px; }
+.report-nav { display:flex; flex-wrap:wrap; gap:4px 32px; margin:0 52px; padding:6px 0; border-bottom:1px solid var(--ink); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.06em; }
+.report-nav a { min-height:44px; display:inline-flex; align-items:center; text-decoration:none; }
+.report-nav a:hover { text-decoration:underline; }
+main { max-width:900px; padding:36px 52px 44px; margin:0 auto; }
+h2 { margin:44px 0 18px; padding:14px 0 0; border-top:1px solid var(--ink); color:var(--ink); font:400 clamp(1.625rem,3vw,2rem)/1.3 var(--serif); letter-spacing:-.025em; break-after:avoid; text-wrap:balance; }
+h3 { margin:28px 0 14px; color:var(--accent); font:600 .875rem/1.5 var(--sans); letter-spacing:.04em; }
+p { margin:0 0 18px; }
+p,li,td { overflow-wrap:break-word; }
+main>p { max-width:72ch; }
+.lead { padding:22px 24px 24px; background:var(--soft); border-top:3px solid var(--accent); border-bottom:1px solid var(--line); margin-bottom:24px; }
+.lead h2 { margin:0 0 14px; padding:0; border:0; color:var(--accent); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.12em; }
+.lead ul { margin:0; padding-left:18px; }
+.lead li { margin-bottom:12px; }
+.lead li:last-child { margin-bottom:0; }
+.tag { display:inline-block; max-width:100%; padding:2px 7px; margin:2px 0; border-radius:2px; font:600 .75rem/1.5 var(--sans); white-space:nowrap; }
+.ok { color:var(--ok); background:var(--ok-bg); }
+.maybe { color:var(--maybe); background:var(--maybe-bg); }
+.no { color:var(--no); background:var(--no-bg); }
+.fam { color:var(--family); background:var(--family-bg); }
+.evidence-guide { border-bottom:1px solid var(--line); color:var(--muted); margin:0 0 30px; font:.8125rem/1.7 var(--sans); }
+.evidence-guide h3 { padding:12px 0 0; margin:0; font:600 .8125rem/1.7 var(--sans); color:var(--ink); letter-spacing:normal; }
+.legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; padding:8px 0 18px; }
+.legend .tag { display:table; margin-bottom:4px; }
+.table-wrap { max-width:100%; overflow-x:auto; margin:16px 0 20px; }
+table { width:100%; border-collapse:collapse; font:.875rem/1.65 var(--sans); }
+th,td { text-align:start; vertical-align:top; border-bottom:1px solid var(--line); padding:12px 16px 12px 0; }
+th { color:var(--muted); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.04em; border-bottom:1px solid var(--ink); }
+th:last-child,td:last-child { padding-right:0; }
+td.d { width:18%; min-width:90px; }
+td.t { width:17%; }
+tr { break-inside:avoid; }
+tr:target { background:var(--accent-soft); }
+blockquote { margin:28px 0; padding:2px 0 2px 20px; border-left:2px solid var(--accent); color:var(--accent); font:italic 1.375rem/1.5 var(--serif); }
+ol,ul { margin:0 0 22px; padding-left:22px; }
+li { margin-bottom:10px; }
+.small { color:var(--muted); font:.8125rem/1.65 var(--sans); }
+.src li { color:var(--muted); font:.8125rem/1.75 var(--sans); margin-bottom:18px; padding-left:4px; }
+.src li b { color:var(--ink); }
+:target { scroll-margin-top:24px; }
+.report-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:20px 52px; border-top:1px solid var(--ink); color:var(--muted); font:.75rem/1.5 var(--sans); }
+.skip-link { position:absolute; top:8px; left:8px; padding:12px 16px; z-index:10; background:var(--paper); transform:translateY(-200%); font:1rem/1.5 var(--sans); }
+.skip-link:focus { transform:translateY(0); }
+@media(max-width:959px) {
+ .report-shell { margin:16px; }
+ .report-header { padding:32px; }
+ .report-topline,.report-footer { padding-left:32px; padding-right:32px; }
+ .report-nav { margin-left:32px; margin-right:32px; }
+ .report-intro { gap:0 24px; }
+ .person-card { display:flex; flex-direction:column; gap:4px; }
+ main { padding:32px; }
+}
+@media(max-width:600px) {
+ :root { --tree-gap:20px; }
+ body { font-size:1rem; }
+ .report-shell { margin:0; border-top-width:5px; }
+ .report-topline { padding:13px 20px; font-size:.75rem; letter-spacing:.06em; }
+ .report-header { padding:24px 20px; }
+ .report-intro { display:block; }
+ h1 { font-size:3rem; }
+ .subtitle { font-size:1rem; margin-bottom:18px; }
+ .report-meta { display:flex; flex-wrap:wrap; gap:10px 24px; padding:0; margin:0 0 18px; border:0; }
+ .demo-note { font-size:.75rem; }
+ .family-tree { margin-top:24px; }
+ .tree-heading { align-items:start; }
+ .tree-heading h2 { font-size:1.5rem; }
+ .person-card { padding:10px; }
+ .person-name { font-size:1.125rem; }
+ .person-role { letter-spacing:.03em; }
+ .person-card.subject { padding-top:8px; }
+ .tree-connectors { height:22px; }
+ .tree-caption { font-size:.75rem; }
+ .report-nav { margin:0 20px; gap:4px 20px; letter-spacing:.02em; }
+ main { padding:24px 20px; }
+ .lead { padding:20px; }
+ .legend { grid-template-columns:1fr; }
+ h2 { margin-top:36px; }
+ table { min-width:560px; }
+ th,td { padding-right:12px; }
+ .report-footer { padding:20px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none !important; scroll-behavior:auto !important; } }
+@media print {
+ body { background:white; font-size:10.5pt; }
+ .report-shell { max-width:none; margin:0; border:0; }
+ .report-topline,.report-footer { padding:8pt 0; font-size:8pt; }
+ .report-header { padding:16pt 0; }
+ .report-intro { gap:0 24pt; }
+ h1 { font-size:34pt; }
+ .subtitle { font-size:11pt; }
+ .demo-note { font-size:8pt; }
+ .family-tree { max-width:145mm; margin-top:18pt; break-inside:avoid; }
+ .person-card { padding:8pt; }
+ .person-name { font-size:12pt; }
+ .person-role,.person-years,.person-status,.tree-caption { font-size:8pt; }
+ .report-nav,.skip-link { display:none; }
+ main { padding:0; }
+ h2 { font-size:16pt; margin-top:20pt; }
+ .table-wrap { overflow:visible; }
+ table { min-width:0; font-size:8.5pt; }
+ th { font-size:8pt; }
+ .evidence-guide { break-inside:avoid; font-size:8.5pt; }
+ .legend { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ a { color:inherit; }
+ .person-card.subject { background:white; }
+}
+/* Local font fallbacks retain multilingual text without network requests. */
+bdi { unicode-bidi:isolate; }
+html :lang(ar), html :lang(he), html :lang(yi), html :lang(ka), html :lang(hy) { letter-spacing:normal; }
+.report-note { grid-column:1/-1; color:var(--muted); font:.8125rem/1.65 var(--sans); }
+.tree-connectors.uncertain::before { border-left-style:dashed; }
+.mother-branch.uncertain { border-right-style:dashed; border-bottom-style:dashed; }
+.spouse-group.uncertain::before { border-top-style:dashed; border-bottom-style:dashed; }
+.photos { display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start; }
+.photos figure { margin:0; }
+figure img { display:block; max-width:100%; height:auto; }
+figcaption { font:.8125rem/1.65 var(--sans); color:var(--muted); margin-top:8px; }
+.docfig { margin:24px 0; break-inside:avoid; }
+.docfig img { width:100%; max-height:225mm; object-fit:contain; border:1px solid var(--line); }
+@media screen { .pb { break-before:auto; } .docfig img { max-height:none; } }
+@media print { .pb { break-before:page; } .tag { white-space:normal; } }
+
+.tree-row.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.tree-row.one { grid-template-columns:minmax(0,1fr); max-width:34%; margin:0 auto; }
+.sib-connector { position:relative; height:28px; color:var(--accent); }
+.sib-connector::before { content:""; position:absolute; left:50%; top:0; height:12px; border-left:1px dashed currentColor; }
+.sib-connector::after { content:""; position:absolute; left:16.5%; right:16.5%; top:12px; height:16px; border:1px dashed currentColor; border-bottom:0; }
+.sib-connector span { position:absolute; left:50%; top:12px; height:16px; border-left:1px dashed currentColor; }
+@media(max-width:600px){ .tree-row.three { grid-template-columns:1fr; gap:10px; } .tree-row.one { max-width:none; } .sib-connector { display:none; } }
+.docpair img { margin-bottom:6px; }
+.family-tree .person-years, .family-tree .person-status { grid-column:1/-1; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#report-content">К тексту отчёта</a>
+<div class="report-shell">
+<div class="report-topline"><span>Семейная история · Исследование</span><span>Составлено 31 октября 2026 г.</span></div>
+<header class="report-header" id="top">
+  <div class="report-intro">
+    <p class="eyebrow">Семейная история по документам</p>
+    <h1><bdi dir="auto">Братья Вороковы</bdi></h1>
+    <p class="subtitle">Жамболет и Жамырза Исуфовичи — братья Халимат Вороковой из села Карагач. Что известно об их службе и гибели.</p>
+    <dl class="report-meta">
+      <div><dt>Период</dt><dd>1896–1942; послевоенный учёт 1947 г.</dd></div>
+      <div><dt>Основания</dt><dd>Список пропавших без вести Прималкинского райвоенкомата (1947, ЦАМО); Книга памяти Кабардино-Балкарии; рассказы семьи</dd></div>
+    </dl>
+    <p class="report-note">Место гибели и захоронения пока не установлено ни для одного из братьев. Важные базы «Память народа» и «Подвиг народа» не удалось проверить: они требуют пройти CAPTCHA.</p>
+  </div>
+  <figure class="family-tree" aria-labelledby="tree-title" aria-describedby="tree-description">
+    <div class="tree-heading"><h2 id="tree-title">Семейное древо</h2><span>Отец и трое детей по рассказу семьи и документам</span></div>
+    <div class="tree-row one">
+      <a class="person-card" href="#relationship-father">
+        <span class="person-role">Отец (по отчеству)</span>
+        <bdi class="person-name" dir="auto">Исуф Вороков</bdi>
+        <span class="person-years">годы неизвестны</span>
+        <span class="person-status">вероятно — только по отчеству</span>
+      </a>
+    </div>
+    <div class="sib-connector" aria-hidden="true"><span></span></div>
+    <div class="tree-row three">
+      <a class="person-card subject" href="#zhambolet">
+        <span class="person-role">Брат</span>
+        <bdi class="person-name" dir="auto">Жамболет (Жамбулат)</bdi>
+        <span class="person-years">1912 или 1917 — пропал без вести в 1941</span>
+      </a>
+      <a class="person-card subject" href="#zhamyrza">
+        <span class="person-role">Брат</span>
+        <bdi class="person-name" dir="auto">Жамырза (Жамурза)</bdi>
+        <span class="person-years">1896 или 1907 — пропал без вести в 1942</span>
+      </a>
+      <a class="person-card" href="#relationship-halimat">
+        <span class="person-role">Сестра, ваша бабушка</span>
+        <bdi class="person-name" dir="auto">Халимат Ворокова</bdi>
+        <span class="person-years">годы в деле не указаны</span>
+        <span class="person-status">по сведениям семьи</span>
+      </a>
+    </div>
+    <figcaption class="tree-caption" id="tree-description">Сверху — отец, ниже — трое детей. Пунктир означает, что связь известна от семьи или выведена по отчеству и документом о родстве пока не подтверждена. Нажмите на карточку, чтобы перейти к основаниям.<span>Жёны братьев (Куала и Лако) названы в разделах о каждом брате.</span></figcaption>
+  </figure>
+</header>
+<nav class="report-nav" aria-label="Разделы отчёта"><a href="#findings">Главное</a><a href="#zhambolet">Жамболет</a><a href="#zhamyrza">Жамырза</a><a href="#family-connections">Родство</a><a href="#conflicts">Нестыковки</a><a href="#next">Что дальше</a><a href="#sources">Источники</a></nav>
+<main id="report-content">
+
+<div class="lead" id="findings">
+  <h2>Главное</h2>
+  <ul>
+    <li><b>Оба брата есть в документах Министерства обороны.</b> В 1947 г. Прималкинский райвоенкомат включил их в список пропавших без вести. Они записаны подряд, под номерами 44 и 45, оба из села Карагач <a href="#source-1">[1]</a>. Ещё одна запись есть в Книге памяти Кабардино-Балкарии <a href="#source-3">[3]</a>. <span class="tag ok">подтверждено</span></li>
+    <li><b>Жамболет пропал без вести в 1941 г.</b> Последние письма от него пришли в августе 1941 г. По Книге памяти его призвали в 1938 г. Это сходится с рассказом семьи о службе до войны и о Финской войне. <span class="tag ok">подтверждено (год)</span></li>
+    <li><b>Жамболет — политрук?</b> В документах он записан рядовым («красноармеец»). Но список 1947 г. составлялся со слов родственников, и звание в таких списках часто писали по умолчанию. Вопрос остаётся открытым. <span class="tag no">есть противоречия</span></li>
+    <li><b>Жамырза пропал без вести в 1942 г.</b> Его призвали в августе 1941 г., письма перестали приходить с ноября 1941 г. <span class="tag ok">подтверждено (год)</span></li>
+    <li><b>Где погиб и где похоронен Жамырза — пока не установлено.</b> Ни в одном найденном документе не указаны его воинская часть или место гибели. Главный ключ к ответу — номер полевой почты на его последних письмах. <span class="tag no">не установлено</span></li>
+  </ul>
+</div>
+
+<aside class="evidence-guide" aria-labelledby="evidence-guide-title">
+  <h3 id="evidence-guide-title">Как читать метки надёжности</h3>
+  <div class="legend">
+    <div><span class="tag ok">подтверждено</span> — сходятся независимые источники</div>
+    <div><span class="tag ok">по документу</span> — сведения есть в одном документе</div>
+    <div><span class="tag fam">по сведениям семьи</span> — семейный рассказ, документом пока не подтверждён</div>
+    <div><span class="tag maybe">вероятно</span> — гипотеза, требующая проверки</div>
+    <div><span class="tag no">не установлено</span> — сведений пока недостаточно</div>
+    <div><span class="tag no">есть противоречия</span> — источники расходятся, обе версии описаны</div>
+  </div>
+</aside>
+
+<h2>Что это за документы</h2>
+<p><b>Список 1947 года.</b> 22 октября 1947 г. Прималкинский райвоенкомат Кабардинской АССР отправил в Москву, в Управление по учёту погибшего и пропавшего без вести рядового и сержантского состава, «именной список по форме 2БП для выяснения судьбы военнослужащих» на 7 листах <a href="#source-2">[2]</a>. Такие списки составляли после войны, обычно по обращениям семей, которые так и не получили известий. В список вносили, когда и каким военкоматом человек призван, когда пришло последнее письмо и кто из родственников его ищет. Номер части там обычно не указан. Поэтому список подтверждает, что человек ушёл на фронт и пропал, но не говорит, где именно.</p>
+<p><b>Книга памяти Кабардино-Балкарии</b>, книга 3, с. 53 <a href="#source-3">[3]</a>. Это сводное издание 1990-х годов. Откуда составители взяли сведения, в книге не сказано. Годы рождения и год призыва Жамболета там другие, чем в списке 1947 г. Значит, книга не перепечатала этот список, а опиралась на другие данные. Однако «погиб» в Книгах памяти нередко пишут и о пропавших без вести.</p>
+
+<h2 id="zhambolet">Жамболет Исуфович Вороков</h2>
+<p>В документах его имя записано как <b>Жамбулат</b> (список 1947 г.) и <b>Жамболат</b> (Книга памяти). Семья называет его Жамболет. Это варианты одного кабардинского имени. Других Вороковых с отчеством «Исуфович» в базе нет.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Сведения о Жамболете; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Что</th><th scope="col">Список РВК, 1947 <a href="#source-1">[1]</a></th><th scope="col">Книга памяти КБР <a href="#source-3">[3]</a></th><th scope="col">Семья</th></tr></thead>
+  <tbody>
+    <tr><td>Место рождения</td><td>Каб. АССР, Прималкинский р-н, с. Карагач</td><td>с. Карагач, кабардинец</td><td>с. Карагач <span class="tag ok">подтверждено</span></td></tr>
+    <tr><td>Год рождения</td><td>1912</td><td>1917</td><td>— <span class="tag no">есть противоречия</span></td></tr>
+    <tr><td>Призыв</td><td>Прималкинским РВК в июле 1941 г.</td><td>Прималкинским РВК в 1938 г.</td><td>служил до войны, Финская война <span class="tag no">есть противоречия</span></td></tr>
+    <tr><td>Звание, должность</td><td>рядовой, стрелок, беспартийный</td><td>красноармеец</td><td>политрук <span class="tag no">есть противоречия</span></td></tr>
+    <tr><td>Последнее письмо</td><td>с августа 1941 г. нет писем</td><td>—</td><td>—</td></tr>
+    <tr><td>Судьба</td><td>«можно считать пропавшим без вести с декабря 1941 г.»</td><td>погиб в 1941 г.</td><td>— <span class="tag ok">подтверждено (1941)</span></td></tr>
+    <tr><td>Семья в 1947 г.</td><td>жена: Ворокова Куала [чтение неуверенное; отчество, возможно, Жамитовна], с. Карагач</td><td>—</td><td>— <span class="tag ok">по документу</span></td></tr>
+  </tbody>
+</table></div>
+
+<h3>Политрук, Рыбинская школа и Финская война</h3>
+<p>Семья помнит, что Жамболет окончил «Рыбинскую политшколу» в Ярославской области, стал политруком и ушёл на советско-финляндскую войну (1939–1940). Документально это пока не подтверждено, но и не опровергнуто: <span class="tag fam">по сведениям семьи</span></p>
+<ul>
+  <li><b>За эту версию говорит Книга памяти:</b> призыв в 1938 г. Человек, призванный в 1938 г., в 1939 г. вполне мог учиться на курсах политработников и воевать в Финляндии.</li>
+  <li><b>Против неё — слово «рядовой» в списке 1947 г.</b> Но этот список составлен по сведениям родственников и военкомата. Тот же бланк с записью «рядовой, стрелок» заполнен почти для всех односельчан на этих листах. Поэтому против версии о политруке это слабый довод.</li>
+  <li><b>Он не значится среди погибших в Финской войне</b> (база «Зимняя война» Петрозаводского университета). Это согласуется с семейным рассказом: с той войны он вернулся и пропал уже в 1941 г.</li>
+  <li><b>Что такое «Рыбинская политшкола», пока не ясно.</b> Поиск не нашёл учебного заведения с таким названием в 1938–1939 гг. Возможно, это были курсы младших политруков при части, стоявшей в Рыбинске. Проверить это можно по документам РГВА.</li>
+</ul>
+<p>Если он был младшим политруком, на него должна быть офицерская учётная карточка. Её стоит искать на «Памяти народа» и в ЦАМО (см. <a href="#next">«Что можно сделать дальше»</a>). <span class="tag maybe">вероятно</span></p>
+
+<figure class="docfig docpair">
+  <img src="artifacts/A-0005a_TsAMO_58-977520-916_img367_row45_left.png" alt="Строка 45 рукописного списка: Вороков Жамбулат Исуфович, рядовой, стрелок, б/п, 1912, Каб. АССР Прималкинский р-н с. Карагач">
+  <img src="artifacts/A-0005b_TsAMO_58-977520-916_img367_row45_right.png" alt="Продолжение строки 45: с августа 1941 г.; можно считать пропавшим без вести с декабря 1941 г.; жена Ворокова Куала; с. Карагач">
+  <figcaption>Строка 45 списка Прималкинского райвоенкомата от 22.10.1947 (выделена красным): «Вороков Жамбулат Исуфович — рядовой — стрелок — б/п — 1912 — Каб. АССР Прималкинский р-н с. Карагач — Прималкинским РВК Каб. АССР в июле 1941 г. — с августа 1941 г. — Можно считать пропавшим без вести с декабря 1941 г. — жена: Ворокова Куала [Жамитовна?] — Каб. АССР Прималкинский р-н с. Карагач». ЦАМО, ф. 58, оп. 977520, д. 916; снимок экрана просмотрщика ОБД «Мемориал».</figcaption>
+</figure>
+
+<h2 id="zhamyrza">Жамырза Исуфович Вороков</h2>
+<p>В документах — <b>Жамурза</b>. Это тот же человек: совпадают отчество, село и военкомат, и в списке он записан строкой выше брата.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Сведения о Жамырзе; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Что</th><th scope="col">Список РВК, 1947 <a href="#source-1">[1]</a></th><th scope="col">Книга памяти КБР <a href="#source-3">[3]</a></th></tr></thead>
+  <tbody>
+    <tr><td>Место рождения</td><td>Каб. АССР, Прималкинский р-н, с. Карагач</td><td>с. Карагач, кабардинец <span class="tag ok">подтверждено</span></td></tr>
+    <tr><td>Год рождения</td><td>1896</td><td>1907 <span class="tag no">есть противоречия</span></td></tr>
+    <tr><td>Призыв</td><td>Прималкинским РВК Каб. АССР в августе 1941 г.</td><td>Прималкинским РВК в 1941 г. <span class="tag ok">подтверждено</span></td></tr>
+    <tr><td>Звание, должность</td><td>рядовой, стрелок, беспартийный</td><td>красноармеец <span class="tag ok">подтверждено</span></td></tr>
+    <tr><td>Последнее письмо</td><td>с ноября 1941 г. нет писем</td><td>—</td></tr>
+    <tr><td>Судьба</td><td>«можно считать пропавшим без вести с апреля 1942 г.»</td><td>погиб в 1942 г. <span class="tag ok">подтверждено (1942)</span></td></tr>
+    <tr><td>Семья в 1947 г.</td><td>жена: Ворокова Лако Х., с. Карагач</td><td>— <span class="tag ok">по документу</span></td></tr>
+  </tbody>
+</table></div>
+
+<h3>Где погиб и где похоронен</h3>
+<p><b>Пока не установлено.</b> <span class="tag no">не установлено</span> Ниже — что известно и почему этого недостаточно.</p>
+<ul>
+  <li>Он ушёл из Карагача в августе 1941 г., последние письма пришли осенью 1941 г., после ноября связь оборвалась. Весной 1942 г. он числился пропавшим без вести.</li>
+  <li>В ОБД «Мемориал» нет ни донесения его части о потерях, ни списка захоронения, ни карточки военнопленного. Есть только послевоенный список военкомата. Так бывает, когда человек пропал в окружении, при отступлении или погиб в части, документы которой не сохранились.</li>
+  <li>Без номера части нельзя назвать ни место гибели, ни место захоронения. Догадки по общей обстановке на фронтах 1941–1942 гг. здесь не помогут.</li>
+  <li><b>Главная зацепка — номер полевой почты</b> на его последних письмах (треугольниках) или на конвертах. По номеру полевой почты устанавливается часть, а по журналу боевых действий части — где она была в ноябре 1941 – апреле 1942 г. и где хоронили погибших.</li>
+</ul>
+
+<figure class="docfig docpair">
+  <img src="artifacts/A-0004a_TsAMO_58-977520-916_img366_row44_left.png" alt="Строка 44 рукописного списка: Вороков Жамурза Исуфович, рядовой, стрелок, б/п, 1896, Каб. АССР Прималкинский р-н с. Карагач">
+  <img src="artifacts/A-0004b_TsAMO_58-977520-916_img366_row44_right.png" alt="Продолжение строки 44: с ноября 1941 г.; можно считать пропавшим без вести с апреля 1942 г.; жена Ворокова Лако Х.; с. Карагач">
+  <figcaption>Строка 44 того же списка: «Вороков Жамурза Исуфович — рядовой — стрелок — б/п — 1896 — Каб. АССР Прималкинский р-н с. Карагач — Прималкинским РВК Каб. АССР в августе 1941 г. — с ноября 1941 г. — Можно считать пропавшим без вести с апреля 1942 г. — жена: Ворокова Лако Х. — Каб. АССР Прималкинский р-н с. Карагач». ЦАМО, ф. 58, оп. 977520, д. 916.</figcaption>
+</figure>
+
+<figure class="docfig">
+  <img src="artifacts/A-0007_KnigaPamyati_KBR_kn3_p53.png" alt="Фрагмент страницы 53 Книги памяти КБР со статьями о Вороковых из Карагача" style="max-width:420px">
+  <figcaption>Книга памяти. Кабардино-Балкарская республика. Книга 3, с. 53 (через ОБД «Мемориал»): статьи «ВОРОКОВ Жамболат Исуфович» и «ВОРОКОВ Жамурза Исуфович».</figcaption>
+</figure>
+
+<h2 id="family-connections">Как они связаны</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица родственных связей; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Связь</th><th scope="col">Чем подтверждается</th><th scope="col">Надёжность</th></tr></thead>
+  <tbody>
+    <tr id="relationship-brothers"><td>Жамболет ↔ Жамырза — братья</td><td>Это прямо утверждает семья. Документы с этим согласуются: одно отчество, одно село, один военкомат, соседние строки одного списка, соседние статьи Книги памяти. Но слово «брат» в них не написано. <a href="#source-1">[1]</a> <a href="#source-3">[3]</a></td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-halimat"><td>Халимат ↔ Жамболет и Жамырза — сестра и братья</td><td>Только семейная память; документов о Халимат в деле пока нет.</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-father"><td>Исуф → Жамболет и Жамырза — отец</td><td>Выведено только из отчества «Исуфович». Отчество не доказывает, кто был отцом.</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+    <tr id="relationship-wives"><td>Жамболет ↔ Куала; Жамырза ↔ Лако</td><td>В графе «ближайшие родственники» списка 1947 г. обе названы «жена». Это не запись о браке. Имя «Куала» прочитано неуверенно. <a href="#source-1">[1]</a></td><td class="t"><span class="tag ok">по документу</span></td></tr>
+  </tbody>
+</table></div>
+<p class="small">В Книге памяти на той же странице записаны и другие Вороковы из Карагача: Бетал Касболатович (1914, погиб 25.09.1942, похоронен в Краснодарском крае, высота Безымянная), Бетал Каншобиевич (1902), Исламбек Тамбиевич (1909), Кубати Умарович (1914), Нахо Камбулатович (1912), Магомет Шубакович (1909, погиб 25.01.1943, Ленинградская обл., п. Синявино). Возможно, это родня, но родство с братьями не проверялось.</p>
+
+<h2>Хронология</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Хронология; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Когда</th><th scope="col">Что и где</th><th scope="col">Надёжность</th></tr></thead>
+  <tbody>
+    <tr><td class="d">1896 или 1907</td><td>Родился Жамырза, с. Карагач</td><td class="t"><span class="tag no">есть противоречия</span></td></tr>
+    <tr><td class="d">1912 или 1917</td><td>Родился Жамболет, с. Карагач</td><td class="t"><span class="tag no">есть противоречия</span></td></tr>
+    <tr><td class="d">1938</td><td>Жамболет призван Прималкинским РВК (по Книге памяти)</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">1938–1939</td><td>Жамболет учится в «Рыбинской политшколе», Ярославская обл.</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">1939–1940</td><td>Жамболет — участник советско-финляндской войны</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">июль 1941</td><td>Жамболет призван (или повторно отправлен) Прималкинским РВК (по списку 1947 г.)</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">август 1941</td><td>Последние письма от Жамболета; Жамырза призван Прималкинским РВК</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">ноябрь 1941</td><td>Последние письма от Жамырзы</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">1941 (дек.)</td><td>Жамболет считается пропавшим без вести</td><td class="t"><span class="tag ok">подтверждено (год)</span></td></tr>
+    <tr><td class="d">1942 (апр.)</td><td>Жамырза считается пропавшим без вести</td><td class="t"><span class="tag ok">подтверждено (год)</span></td></tr>
+    <tr><td class="d">22.10.1947</td><td>Прималкинский райвоенкомат подаёт список для выяснения их судьбы; жёны живут в Карагаче</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+  </tbody>
+</table></div>
+
+<h2>Места</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Места; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Как в документе</th><th scope="col">Принадлежность на дату события</th><th scope="col">Сейчас</th></tr></thead>
+  <tbody>
+    <tr><td>Каб. АССР, Прималкинский р-н, с. Карагач</td><td>Кабардино-Балкарская АССР, Прималкинский район (1941–1947; в 1944–1957 республика называлась Кабардинской АССР)</td><td>с. Карагач, Прохладненский район, Кабардино-Балкарская Республика</td></tr>
+    <tr><td>Прималкинский РВК</td><td>районный военкомат, призывавший жителей Карагача</td><td>учёт ведёт военкомат по Прохладненскому району КБР</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="conflicts">Нестыковки в документах</h2>
+<ul>
+  <li><b>Годы рождения.</b> Список 1947 г.: Жамырза — 1896, Жамболет — 1912. Книга памяти: 1907 и 1917. Различить версии помогут похозяйственные книги сельсовета Карагач или другие документы о самих братьях.</li>
+  <li><b>Когда призван Жамболет.</b> Список 1947 г.: июль 1941 г.; Книга памяти: 1938 г. Обе версии могут быть верны, если он служил с 1938 г., а в 1941 г. его учёт снова прошёл через военкомат. Ответ даст учётно-послужная карточка.</li>
+  <li><b>Звание Жамболета.</b> Семья помнит политрука; документы называют рядовым. Подробнее — в разделе <a href="#zhambolet">о Жамболете</a>.</li>
+  <li><b>Месяц пропажи.</b> В карточках ОБД «Мемориал» указано: Жамболет — 11.1941, Жамырза — 02.1942. На самом скане (графа 10) написано «с декабря 1941 г.» и «с апреля 1942 г.». Даты в карточках, по-видимому, взяты из неразборчивой пометы в графе 9 (похоже на «з/б 6.XI.41» и «з/б 6.II.42»). Здесь вернее текст документа.</li>
+</ul>
+
+<h2>Где искали и не нашли</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Покрытие поиска; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Где</th><th scope="col">Что искали</th><th scope="col">Почему это ещё не ответ</th></tr></thead>
+  <tbody>
+    <tr><td>ОБД «Мемориал»</td><td>Все 170 записей с фамилией Вороков; варианты имени (Жамбулат, Жамболет, Жамбот, Джамбулат, Жамурза) и отчества (Юсуфович, Юсупович); все 347 «Исуфовичей» — нет ли искажённой фамилии; Книги памяти</td><td>Кроме описанных записей, ничего нет. В базе нет донесений части, списков захоронения и документов о плене. Часть таких документов есть только на «Памяти народа»</td></tr>
+    <tr><td>«Зимняя война» (winterwar.karelia.ru)</td><td>Фамилии Вороков, Ворок…, Варок…, Ворох…</td><td>Это база только погибших и пропавших в 1939–1940 гг. Тех, кто вернулся, в ней нет</td></tr>
+    <tr><td>«Бессмертный полк» (moypolk.ru)</td><td>Вороков; Вороков Жамбулат / Жамболат / Жамурза; Ворокова Халимат</td><td>Страниц братьев нет. Если семья создаст такую страницу, её смогут найти другие родственники</td></tr>
+    <tr><td>«Память народа», «Подвиг народа»</td><td>—</td><td><b>Не проверено:</b> сайт требует пройти CAPTCHA (см. ниже)</td></tr>
+    <tr><td>«Дорога памяти» (1418museum.ru)</td><td>Вороков Исуфович</td><td>Поиск не выдал результатов в автоматическом режиме; стоит повторить вручную</td></tr>
+    <tr><td>Общий поиск в интернете</td><td>ФИО, «Рыбинская политшкола»</td><td>Ничего по теме</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="next">Что можно сделать дальше</h2>
+<h3>Сделать вам (пройти CAPTCHA)</h3>
+<ul>
+  <li><b>«Память народа»</b>: откройте <a href="https://pamyat-naroda.ru/heroes/?adv_search=y&amp;last_name=%D0%92%D0%BE%D1%80%D0%BE%D0%BA%D0%BE%D0%B2&amp;middle_name=%D0%98%D1%81%D1%83%D1%84%D0%BE%D0%B2%D0%B8%D1%87&amp;group=all">поиск «Вороков … Исуфович»</a> и пройдите проверку. Пришлите мне список найденного или снимки экрана, особенно записи из учётно-послужной картотеки офицеров, документов о военнопленных и списков военно-пересыльных пунктов. Отдельно проверьте имя без отчества: Вороков Жамбулат, Вороков Жамболат.</li>
+  <li><b>«Подвиг народа»</b> (тот же портал): награды Жамболета за 1939–1941 гг., например медаль «За отвагу» или «За боевые заслуги» за Финскую войну.</li>
+</ul>
+<h3>В семье</h3>
+<ul>
+  <li><b>Письма с фронта, треугольники, конверты</b>: номер полевой почты — главный ключ к месту гибели.</li>
+  <li><b>Извещения, справки военкомата</b> из 1940-х годов, ответы на запросы о розыске.</li>
+  <li><b>Фотографии</b>: если Жамболет снят в форме, по петлицам и нарукавной звезде можно понять, был ли он политработником.</li>
+  <li><b>Дети братьев и их жёны</b> (Куала, Лако): у их потомков могли остаться документы.</li>
+  <li>Кто в семье рассказывал о Рыбинской школе и Финской войне и откуда это известно.</li>
+</ul>
+<h3>Запросить в архивах</h3>
+<ul>
+  <li><b>ЦАМО РФ</b> (Подольск): учётно-послужная карточка или личное дело Ворокова Жамбулата (Жамболата) Исуфовича, 1912/1917 г.р., уроженца с. Карагач, призванного Прималкинским РВК в 1938 г., если он служил в политсоставе; сведения о Вороковом Жамурзе Исуфовиче. Указать известный шифр: ф. 58, оп. 977520, д. 916.</li>
+  <li><b>РГВА</b> (Москва): документы о курсах или школе политруков в Рыбинске 1938–1939 гг., списки выпускников; участие в советско-финляндской войне.</li>
+  <li><b>Военный комиссариат КБР</b> (по Прохладненскому району): учётные карточки призыва 1938 и 1941 гг.</li>
+  <li><b>Архивная служба КБР</b>: похозяйственные книги сельсовета Карагач за 1930–1940-е гг. В них есть состав семьи (Исуф, его дети, в том числе Халимат) и годы рождения.</li>
+</ul>
+
+<h2 id="sources">Источники</h2>
+<ol class="src">
+  <li id="source-1"><b>Именной список безвозвратных потерь по форме 2БП по Прималкинскому райвоенкомату Кабардинской АССР</b>, строки 44 (Вороков Жамурза Исуфович) и 45 (Вороков Жамбулат Исуфович). ЦАМО РФ, ф. 58, оп. 977520, д. 916; донесение № 75414, дата поступления 29.10.1947. Карточки ОБД «Мемориал»: <a href="https://obd-memorial.ru/html/info.htm?id=64914710">ID 64914710</a>, <a href="https://obd-memorial.ru/html/info.htm?id=64914711">ID 64914711</a>.</li>
+  <li id="source-2"><b>Сопроводительное письмо Прималкинского райвоенкомата КАССР № 0512 от 22.10.1947</b> к тому же списку. ЦАМО РФ, ф. 58, оп. 977520, д. 916. <a href="https://obd-memorial.ru/html/info.htm?id=64914651">ОБД «Мемориал», ID 64914651</a>.</li>
+  <li id="source-3"><b>Книга памяти. Кабардино-Балкарская республика. Книга 3</b>, с. 53. <a href="https://obd-memorial.ru/html/info.htm?id=404143330">ОБД «Мемориал», ID 404143330</a> (Жамболат), <a href="https://obd-memorial.ru/html/info.htm?id=404143331">ID 404143331</a> (Жамурза).</li>
+  <li id="source-4"><b>Сведения семьи</b>, переданные внуком/внучкой Халимат Вороковой, 31.10.2026.</li>
+</ol>
+<p class="small">Выводы о звании и службе Жамболета могут измениться, если найдутся его учётно-послужная карточка, наградные документы или письма. Место гибели Жамырзы можно будет установить, если станет известна его часть. Сведения о ныне живущих людях не собирались. Рабочие реестры дела лежат рядом с отчётом: artifact-register.csv, claims-register.csv, search-log.csv.</p>
+
+</main>
+<footer class="report-footer"><span>Братья Вороковы — Жамболет и Жамырза Исуфовичи · исследование 31.10.2026</span><a href="#top">К началу ↑</a></footer>
+</div>
+</body>
+</html>
